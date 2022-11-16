@@ -1,0 +1,23 @@
+<%= render 'navbar', restaurant: @restaurant %>
+
+
+
+    <strong>Name:</strong>
+    <%= @restaurant.name %>
+<br>
+    <strong>Address:</strong>
+    <%= @restaurant.address %>
+<br>
+    <strong>Category:</strong>
+    <%= @restaurant.category %>
+<br>
+    <strong>Review:</strong>
+    <% @restaurant.reviews.each do |review| %>
+    <br> <%= review.rating %> - <%= review.content %>
+    <% end %>
+<br>
+
+
+
+<%= link_to "Add Review", new_restaurant_review_path(@restaurant) %>
+<%= link_to "Restaurant", restaurants_path %>
